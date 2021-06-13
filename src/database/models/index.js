@@ -1,5 +1,5 @@
 "use strict";
-
+require("dotenv").config({ path: __dirname + "/.env" });
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
@@ -8,16 +8,12 @@ const config = require(path.resolve(__dirname, "src", "database", "mysql.js"));
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
-}
+sequelize = new Sequelize(
+  config.database,
+  config.username,
+  config.password,
+  config
+);
 
 fs.readdirSync(__dirname)
   .filter((file) => {
