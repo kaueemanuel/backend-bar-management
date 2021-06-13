@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-require(path.join(__dirname, "src", "database", "connect"));
+// require(path.join(__dirname, "src", "database", "connect"));
 
 require("dotenv").config({ path: __dirname + "/.env" });
 

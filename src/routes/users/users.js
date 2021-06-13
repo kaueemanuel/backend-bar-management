@@ -1,10 +1,13 @@
 var express = require("express");
 var router = express.Router();
+const userRepo = require("../../database/mysql/repositories/users");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
-    res.send({ rows: [], count: 0 });
+    const response = await userRepo.find();
+    const count = await userRepo.count();
+    res.send({ rows: response, count: count });
   } catch (error) {
     next(error);
   }

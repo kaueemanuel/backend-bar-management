@@ -6,7 +6,7 @@ module.exports = {
       "Roles",
       [
         {
-          name: "admin",
+          name: "administrador",
         },
       ],
       {}
@@ -15,7 +15,7 @@ module.exports = {
       "Roles",
       [
         {
-          name: "employee",
+          name: "funcionário",
         },
       ],
       {}
