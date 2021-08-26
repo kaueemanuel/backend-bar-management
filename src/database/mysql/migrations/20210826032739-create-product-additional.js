@@ -5,14 +5,14 @@ module.exports = {
     try {
       await queryInterface.createTable('Product_Additional', {
         id: {
-          type: Sequelize.INTEGER(11).UNSIGNED,
+          type: Sequelize.INTEGER(11),
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
           unique: true,
         },
         productId: {
-          type: Sequelize.INTEGER(11).UNSIGNED,
+          type: Sequelize.INTEGER(11),
           allowNull: true,
           references: {
             model: "Product",
@@ -22,7 +22,7 @@ module.exports = {
           onUpdate: 'cascade'
         },
         additionalId: {
-          type: Sequelize.INTEGER(11).UNSIGNED,
+          type: Sequelize.INTEGER(11),
           allowNull: false,
           references: {
             model: "Additional",

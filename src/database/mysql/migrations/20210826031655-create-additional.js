@@ -9,7 +9,7 @@ module.exports = {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
-          type: Sequelize.INTEGER,
+          type: Sequelize.INTEGER(11),
         },
         name: {
           allowNull: false,
@@ -17,7 +17,7 @@ module.exports = {
         },
         price: {
           allowNull: false,
-          type: Sequelize.NUMBER,
+          type: Sequelize.FLOAT,
         },
         createdAt: {
           allowNull: false,
