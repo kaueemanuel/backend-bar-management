@@ -22,7 +22,6 @@ const update = async (data, where) => {
 };
 const destroy = async (userIds) => {
   const transaction = await models.sequelize.transaction();
-  console.log(userIds)
   try {
     await models.User.destroy({
       where: {
